@@ -10,7 +10,8 @@
 #ifndef SMTPCompiler_hpp
 #define SMTPCompiler_hpp
 
-#include <stdio.h>
+#include <cstdio>
+#include <cstring>
 #include <iostream>
 #include <curl/curl.h>
 #include <vector>
