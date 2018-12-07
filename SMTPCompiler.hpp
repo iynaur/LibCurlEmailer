@@ -51,7 +51,7 @@ private:
     vector<string> getHeader();
     vector<string> getBody();
     vector<vector<string>> getAttachments();
-    vector<string> getWholeMessage();
+    vector<string> &&getWholeMessage();
     
     //constants
     //boundary can be any random string
