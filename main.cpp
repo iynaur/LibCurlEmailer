@@ -20,25 +20,26 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     SMTPCompiler s;
-    string from = "myemail@gmail.com";
+    string from = "iynaur87@sina.com";
     s.setFrom(from);
-    string to = "your@gmail.com";
-    string cc = "someone_else@gmail.com";
+    string to = "ruanyi@seizet.com";
+    string cc = "310391890@qq.com";
     vector<string> recipients;
     recipients.push_back(to);
     recipients.push_back(cc);
     s.setDestinations(recipients);
-    string server = "smtp.gmail.com:25";
+    string server = "smtp.sina.com:25";
     s.setServer(server);
-    string username = "myemail@gmail.com";
+    string username = from;
     s.setUsername(username);
-    string pwd = "MyPassword";
+    string pwd;
+    cin>>pwd;
     s.setPassword(pwd);
     string subject = "The subject text goes here";
     s.setSubject(subject);
     
     
-    string body = "this is the body text blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah";
+    string body = "this is the body text blah blah blah";
     s.setBodyText(body);
     
     string bodyContent = "application/pdf";
@@ -47,10 +48,10 @@ int main(int argc, const char * argv[]) {
     s.setBodyEncoding(bodyEncoding);
     
     vector<string> attachments;
-    string attachment = "myPDFFile.pdf";
-    string attachment2 = "myOtherPDFFile.pdf";
+    string attachment = "Makefile";
+    string attachment2 = "test.txt";
     attachments.push_back(attachment);
-    attachments.push_back(attachment2);
+    //attachments.push_back(attachment2);
     s.setAttachmentList(attachments);
  
     s.send();

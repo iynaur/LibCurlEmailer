@@ -343,7 +343,7 @@ vector<vector<string>> SMTPCompiler::getAttachments(){
  * This method is used by the payload_source static function to get the message
  * and add the SMTP bits like boundaries and message terminator.
  */
-vector<string>&& SMTPCompiler::getWholeMessage(){
+vector<string> SMTPCompiler::getWholeMessage(){
     vector<string> msg;
     
     for(string s : header)
@@ -397,7 +397,7 @@ vector<string>&& SMTPCompiler::getWholeMessage(){
         msg.push_back(CRLF + SMTP_TERMINATOR + CRLF);
 
     }
-    return move(msg);
+    return std::move(msg);
 }
 
 /**
